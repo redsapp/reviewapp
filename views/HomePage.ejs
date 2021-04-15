@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head
+  <head>
     <%- include('./layouts/head.ejs') %>
+    <link rel="stylesheet" href="/css/home.css">
   </head>
   <body>
       <%- include('./layouts/header.ejs') %>
-      <h1>Home page</h1>
+      <!-- Page Intro Title -->
+      <section class="page-intro">
+        <div class="page-intro-title">
+          <h2>The First Website of Goods Exchange in Morocco</h1>
+        </div>
+      </section>
+
+
+
+      <!-- Search Box -->
+      <section class="searchbox center">
+        <div class="container bg-white" style="padding:30px">
+          <form class="" action="index.html" method="post">
+            <div class="row">
+              <div class="col-lg-3 feature-box">
+                <input type="text" name="" placeholder="What are you looking for?">
+              </div>
+              <div class="col-lg-3 feature-box">
+                <select class="" name="list-cg">
+                <option value="0">All categories</option>
+                <option value="1">Laptops and Phones</option>
+                <option value="2">Cars</option>
+                <option value="3">Furniture</option>
+                <option value="4">Others</option>
+                </select>
+              </div>
+              <div class="col-lg-3 feature-box">
+                <select class="" name="list-ct">
+                <option value="0">All cities</option>
+                <option value="1">Agadir</option>
+                <option value="1">Casablanca</option>
+                <option value="2">Marrakesh</option>
+                <option value="3">Rabat</option>
+                <option value="4">Tanger</option>
+                </select>
+              </div>
+              <div class="col-lg-3 feature-box">
+                <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+
+
+      </section>
+
+
+
+
+      <!-- Bootstrap Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
   </body>
     <%- include('./layouts/footer.ejs') %>
 </html>

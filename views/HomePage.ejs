@@ -58,19 +58,8 @@
 
       <section class="p-3">
         <h3 class="p-2">Choisissez une catégorie</h3>
-        <div class="row categorylist text-center">
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
-          <div class="col-2">.</div>
+        <div class="row categorylist text-center" id="categorylist">
+
 
         </div>
       </section>
@@ -82,5 +71,29 @@
 
 
   </body>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', load);
+
+  function load() {
+  fetch(`http://127.0.0.1:3000/api/category`)
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+          data.forEach(list_catgory);
+      })
+    };
+
+    function list_catgory(data) {
+
+    // Create new post
+    const post = document.createElement('div');
+    post.className = 'col-2';
+    post.innerHTML = data.title;
+
+    // Add post to DOM
+    document.querySelector('#categorylist').append(post);
+  };
+  </script>
+
     <%- include('./layouts/footer.ejs') %>
 </html>

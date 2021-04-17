@@ -1,43 +1,17 @@
-body {
-  background-color: #f8f5f1;
-  text-align: center;
-  font-family: 'Tahoma';
+body{
+  background-color: #f2f2f2
 }
-
-/* input */
-input,select {
-  height:40px;
-  width:210px;
-
-}
-
-.feature-box {
-    padding:0 5%;
+.searcharea{
+  border: 0.5px solid #eee;
+padding: 30px;
+border-radius: 6px;
+box-shadow: 1px 1px 4px #ddd;
 }
 
 
-/* Nav Bar */
-.navbar-section {
-  margin-top:5px;
-}
+.categorylist .col-2{
 
-.center {
-  margin: 10px auto;
-  padding: 0 20%;
-}
-
-.navbar-brand {
-  margin-right: 100px
-}
-
-/* Page Intro Title */
-.page-intro {
-  margin: 20px auto;
-  padding: 0 20%;
-}
-
-
-/* Search Box */
-.btn {
-  height:40px;
+  border:1px solid #eee;
+  background: white;
+  min-height: 200px
 }

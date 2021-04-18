@@ -7,11 +7,6 @@
   <body class="pt-5">
       <%- include('./layouts/header.ejs') %>
       <!-- Page Intro Title -->
-      <section class="page-intro">
-        <div class="page-intro-title text-center p-5">
-          <h2>The First Website of Goods Exchange in Morocco</h1>
-        </div>
-      </section>
 
       <div class="container">
 
@@ -63,18 +58,24 @@
 
         </div>
       </section>
-
-      <div class="row categorylist justify-content-center" id="categorylist">
-
-
-      </div>
-
-
+</div>
   </body>
   <script type="text/javascript">
+
+
+
+  </script>
+  <script type="text/javascript">
+
+
+
   document.addEventListener('DOMContentLoaded', load);
 
+
+
   function load() {
+
+
   fetch(`http://127.0.0.1:3000/api/category`)
       .then(response => response.json())
       .then(data => {

@@ -41,6 +41,21 @@ app.get('/',(req,res)=>{
 
 });
 
+app.get('/list',(req,res)=>{
+//res.send('<h1>Hello world</h1>')
+    res.render('items/index',{title:'List'});
+
+});
+
+app.get('/details',(req,res)=>{
+//res.send('<h1>Hello world</h1>')
+
+    res.render('items/details',{title:'details'});
+
+
+
+
+});
 
 app.use('/api/category', ApiCategoryRoutes);
 

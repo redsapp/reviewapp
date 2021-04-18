@@ -1,17 +1,27 @@
 body{
   background-color: #f2f2f2
 }
+
+.nav-item {
+  text-align: center;
+  padding: 0 5%;
+}
+
+
 .searcharea{
   border: 0.5px solid #eee;
-padding: 30px;
-border-radius: 6px;
-box-shadow: 1px 1px 4px #ddd;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px #ddd;
 }
 
 
 .categorylist .categoryitem{
 
   border:1px solid #eee;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
   background: white;
-  min-height: 200px
+  min-height: 200px;
 }

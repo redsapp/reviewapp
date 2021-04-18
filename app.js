@@ -33,18 +33,12 @@ app.use(morgan('dev'));
 
 app.get('/',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
-
     res.render('HomePage',{title:'Home'});
-
-
-
-
 });
 
 app.get('/list',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
     res.render('items/index',{title:'List'});
-
 });
 
 app.get('/details',(req,res)=>{

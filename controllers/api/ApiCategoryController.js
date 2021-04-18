@@ -3,7 +3,7 @@ const Category = require('../../models/ItemCategory');
 
 const category_list = (req,res) =>{
 
-  Category.find().sort({createdAt:-1})
+  Category.find()
  .then((categories)=>{
      res.json(categories);
  })

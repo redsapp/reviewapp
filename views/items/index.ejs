@@ -13,7 +13,7 @@
       <!-- Row that contains list of items and col-4 -->
         <div class="row">
       <!-- List of items -->
-          <div class="col-lg-8 col-md-12 p-0 m-2">
+          <div class="col-lg-8 col-md-12 p-2">
 
       <!-- First item -->
               <div class="row bg-white g-0 mb-2 shadow-sm rounded-3">
@@ -42,8 +42,8 @@
                                 <div class="row bottom-0 start-0">
                                       <div class="row mt-5">
                                         <p class="card-text mb-0">
-                                          <small class="text-muted">
-                                          <h5 class="mb-0">Item category</h5>
+                                          <small class="text-muted" id="item-category">
+                                          <!-- Javascript content -->
                                           </small>
                                         </p>
                                       </div>
@@ -53,14 +53,14 @@
                                       </div>
 
       <!-- Time of post -->
-                                      <div class="row">
-                                        <div class="col-lg-3 col-md-2">
-                                          <small class="text-muted"><i class="fas fa-clock me-1"></i>time</small>
+                                      <div class="row pb-3">
+                                        <div class="col-lg-3 col-md-2" id="psTime">
+                                        <!-- Javascript content -->
                                         </div>
 
       <!-- Location of post -->
                                         <div class="col-lg-3 col-md-2">
-                                          <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Location</small>
+                                        <i class="fas fa-map-marker-alt me-1 text-muted"><small class="text-muted "></i>Location</small>
                                         </div>
                                       </div>
                                 </div>
@@ -74,7 +74,7 @@
             </div>
 
             <!-- Other div -->
-                    <div class="col-lg-3 col-md-12 bg-white m-2">col-4</div>
+                    <div class="col-lg-4 col-md-12 bg-white mt-2">col-4</div>
 
 
           </div>
@@ -84,6 +84,54 @@
 
 
   </body>
+
+  <script type="text/javascript">
+
+
+
+  document.addEventListener('DOMContentLoaded', load);
+
+
+
+  function load() {
+
+
+  fetch(`http://127.0.0.1:3000/api/category`)
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+
+          // Create category title
+          const ctTitle = document.createElement('h5');
+          ctTitle.className = 'mb-0';
+          ctTitle.innerHTML = data[3].title;
+
+          // Add category title to DOM
+          document.querySelector('#item-category').append(ctTitle);
+
+
+          // Create time of post
+          const postTime = document.createElement('small');
+          postTime.className = 'text-muted';
+          postTime.innerHTML = data[3].createdAt;
+
+
+          // Add time icon to DOM
+          const timeIcon = document.createElement("i");
+          timeIcon.className = "fas fa-clock me-1 text-muted";
+
+          document.querySelector('#psTime').append(timeIcon);
+          //Add time text to DOM
+          document.querySelector('#psTime').append(postTime);
+
+
+      })
+    };
+
+
+  </script>
+
+
 
     <%- include('../layouts/footer.ejs') %>
 </html>

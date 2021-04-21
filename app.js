@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 // routes
 const HomeRoutes = require('./routes/HomeRoute');
 const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
+const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 
 
 
@@ -52,6 +53,7 @@ app.get('/details',(req,res)=>{
 });
 
 app.use('/api/category', ApiCategoryRoutes);
+app.use('/api/items', ApiItemsRoutes);
 
 app.use((req,res) => {
     res.status(404).render('404',{title:'404'})

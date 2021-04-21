@@ -3,6 +3,9 @@
   <head>
     <%- include('../layouts/head.ejs') %>
     <link rel="stylesheet" href="../css/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   </head>
   <body class="pt-5">
       <%- include('../layouts/header.ejs') %>
@@ -13,9 +16,23 @@
       <!-- Row that contains list of items and col-4 -->
         <div class="row">
       <!-- List of items -->
-          <div class="col-lg-8 col-md-12 p-2">
+          <div id="parent" class="col-lg-8 col-md-12 p-2">
 
       <!-- First item -->
+      <div id="listings">
+        <section v-if="goterror">
+          <p>We have an internal error and data will be displayed very soon...</p>
+        </section>
+
+        <section v-else>
+          <div v-if="loading">Loading...</div>
+
+          <div
+            v-else
+            v-for="item in items"
+            class="items"
+          >
+
               <div class="row bg-white g-0 mb-2 shadow-sm rounded-3">
 
       <!-- Item image -->
@@ -34,14 +51,16 @@
                                         </div>
                                 </div>
       <!-- Item name -->
-                                <div class="row" id="item-title">
+                                <div class="row border-bottom" id="item-title">
                                 <!-- Javascript content -->
+                                {{ item.title }}
                                 </div>
 
 
       <!-- Item description -->
                                 <div class="row" id="item-description">
                                 <!-- Javascript content -->
+                                  {{ item.intro }}
                                 </div>
 
       <!-- Item category -->
@@ -50,6 +69,7 @@
                                         <p class="card-text mb-0">
                                           <small class="text-muted" id="item-category">
                                           <!-- Javascript content -->
+                                            {{ item.category }}
                                           </small>
                                         </p>
                                       </div>
@@ -78,6 +98,13 @@
                 </div>
 
 
+              </div>
+
+            </section>
+          </div>
+
+
+
             </div>
 
             <!-- Other div -->
@@ -90,68 +117,37 @@
 
 
 
+
   </body>
 
   <script type="text/javascript">
 
 
 
-  document.addEventListener('DOMContentLoaded', load);
+  new Vue({
+  el: '#listings',
+  data () {
+    return {
+      items: null,
+      loading: true,
+      goterror: false
+    }
+  },
+  mounted () {
+    axios
+      .get('http://127.0.0.1:3000/api/items')
+      .then(response => {
 
-
-
-  function load() {
-
-
-  fetch(`http://127.0.0.1:3000/api/items`)
-      .then(response => response.json())
-      .then(data => {
-          console.log(data);
-
-        // Create item title
-        const itemTitle = document.createElement("h5");
-        itemTitle.innerHTML = data[0].title;
-
-        // Add item title to DOM
-        document.querySelector("#item-title").append(itemTitle);
-
-
-        // Create category title
-        const ctTitle = document.createElement('h5');
-        ctTitle.className = 'mb-0';
-        ctTitle.innerHTML = data[0].category;
-
-        // Add category title to DOM
-        document.querySelector('#item-category').append(ctTitle);
-
-
-        // Create item description
-        const itemDescription = document.createElement('p');
-        itemDescription.className = 'text-start'
-        itemDescription.innerHTML = data[0].description;
-
-        // Add item description to DOM
-        document.querySelector('#item-description').append(itemDescription);
-
-
-        // Create time of post
-        const postTime = document.createElement('small');
-        postTime.className = 'text-muted';
-        postTime.innerHTML = data[0].createdAt;
-
-
-        // Create time icon
-        const timeIcon = document.createElement("i");
-        timeIcon.className = "fas fa-clock me-1 text-muted";
-
-        // Add time icon to DOM
-        document.querySelector('#psTime').append(timeIcon);
-
-        //Add time text to DOM
-        document.querySelector('#psTime').append(postTime);
-
+        this.items = response.data
       })
-    };
+      .catch(error => {
+        console.log(error)
+        this.goterror = true
+      })
+      .finally(() => this.loading = false)
+  }
+})
+
 
 
   </script>

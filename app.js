@@ -32,6 +32,11 @@ app.use(express.urlencoded({extended:true}))
 // first route
 app.use(morgan('dev'));
 
+//Variables
+
+const listOfCategories = ["Voitures", "VEHICULES", "AUTO NEUF", "INFORMATIQUE ET MULTIMEDIA", "IMMOBILIER", "IMMO NEUF", "LA MAISON ET JARDIN", "EMPLOI ET SERVICES", "HABILLEMENT ET BIEN ETRE", "LOISIRS ET DIVERTISSEMENT", "ENTREPRISES", "AUTRES"];
+
+
 app.get('/',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
     res.render('HomePage',{title:'Home'});
@@ -44,7 +49,7 @@ app.get('/list',(req,res)=>{
 
 app.get('/newitem',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
-    res.render('items/create',{title:'New item'});
+    res.render('items/create',{title:'New item', listOfCategories:listOfCategories});
 });
 
 app.get('/details',(req,res)=>{

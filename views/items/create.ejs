@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../layouts/head.ejs') %>
+    <link rel="stylesheet" href="../css/home.css">
+
+  </head>
+  <body class="pt-5">
+      <%- include('../layouts/header.ejs') %>
+
+      <div class="container">
+
+    <section class="searcharea bg-white">
+
+<!-- Post form   -->
+      <form class="" action="index.html" method="post">
+        <div class="row pb-3">
+<!-- Title col -->
+          <div class="col">
+
+            <label for="">Title of item</label><br>
+            <input type="text" class="form-control" placeholder="Item title" aria-label="">
+
+          </div>
+
+<!-- Category col -->
+          <div class="col">
+
+            <label for="">Type of category</label><br>
+            <select class="form-select" name="categories">
+              <option value="0">Toutes les catégories</option>
+              <% for(var i=0; i< listOfCategories.length; i++) { %>
+              <option value="">
+              <%= listOfCategories[i] %>
+              </option>
+              <% } %>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="row pb-3">
+<!-- Description col -->
+          <div class="col">
+
+              <label for="">Description</label><br>
+              <!-- <input type="text" class="form-control" name="" value="" placeholder="Write desription ..."> -->
+              <textarea name="description" class="form-control" placeholder="Write description . . ." rows="8" cols="80"></textarea>
+
+          </div>
+
+<!-- Upload col -->
+          <div class="col">
+
+              <div class="input-group pt-4">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              </div>
+
+          </div>
+
+        </div>
+
+<!-- Button row -->
+          <div class="row">
+
+            <div class="col">
+              <button type="button" class="btn btn-primary" name="button">Post item</button>
+            </div>
+
+          </div>
+
+        </form>
+
+
+    </section>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </body>
+
+      <%- include('../layouts/footer.ejs') %>
+  </html>

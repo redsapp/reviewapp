@@ -42,6 +42,11 @@ app.get('/list',(req,res)=>{
     res.render('items/index',{title:'List'});
 });
 
+app.get('/Newitem',(req,res)=>{
+//res.send('<h1>Hello world</h1>')
+    res.render('items/create',{title:'New item'});
+});
+
 app.get('/details',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
 

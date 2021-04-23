@@ -10,20 +10,22 @@
 
       <div class="container mb-5">
 
-    <section class="searcharea bg-white">
+    <section class="searcharea bg-light">
+
+  <div class="col-md-6 offset-md-3">
 
 <!-- Post form   -->
       <form class="" action="http://127.0.0.1:3000/api/items/create" method="post">
 
 <!-- Title col -->
-          <div class="col-lg-6 pb-3">
+          <div class="mb-3">
 
             <label for="">Title of item</label><br>
             <input type="text" name="title" class="form-control" placeholder="Item title" aria-label="">
 
           </div>
 
-          <div class="col-lg-6 pb-3">
+          <div class="mb-3">
 
             <label for="">Intro of item</label><br>
             <input type="text" name="intro" class="form-control" placeholder="Item intro" aria-label="">
@@ -33,7 +35,7 @@
 
 
 <!-- Category col -->
-          <div class="col-lg-6 pb-3">
+          <div class="mb-3">
 
             <label for="">Type of category</label><br>
             <select class="form-select" name="category">
@@ -51,7 +53,7 @@
 
 
 <!-- Description col -->
-          <div class="col-lg-6 pb-3">
+          <div class="mb-3">
 
               <label for="">Description</label><br>
               <!-- <input type="text" class="form-control" name="" value="" placeholder="Write desription ..."> -->
@@ -60,7 +62,7 @@
           </div>
 
 <!-- Upload col -->
-          <div class="col-lg-6 pb-3">
+          <div class="mb-3">
 
               <div class="input-group px-0">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
@@ -71,17 +73,19 @@
 
 
 <!-- Button row -->
-          <div class="col-lg-6">
+          <div class="mb-3">
 
-                <input type="submit" class="btn btn-primary col-3" name="button" value="Post item">
+                <input type="submit" class="btn btn-primary" name="button" value="Post item">
 
 
           </div>
 
         </form>
 
+    </div>
 
-    </section>
+
+      </section>
 
 
 

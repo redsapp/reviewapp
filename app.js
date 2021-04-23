@@ -8,6 +8,7 @@ const HomeRoutes = require('./routes/HomeRoute');
 const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
 const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 const ItemsRoutes = require('./routes/ItemsRoutes')
+const Category = require('./models/ItemCategory')
 
 
 
@@ -35,7 +36,14 @@ app.use(morgan('dev'));
 
 //Variables
 
+// check this out
+app.get('/newitem', (req,res)=>{
 
+  Category.find(function(err, cat){
+          res.render('items/create',{title:'Home', listOfCategories:cat});
+      });
+
+})
 
 app.get('/',(req,res)=>{
 //res.send('<h1>Hello world</h1>')

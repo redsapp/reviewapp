@@ -8,28 +8,32 @@
   <body class="pt-5">
       <%- include('../layouts/header.ejs') %>
 
-      <div class="container">
+      <div class="container mb-5">
 
     <section class="searcharea bg-white">
 
 <!-- Post form   -->
       <form class="" action="http://127.0.0.1:3000/api/items/create" method="post">
-        <div class="row pb-3">
+
 <!-- Title col -->
-          <div class="col">
+          <div class="col-lg-6 pb-3">
 
             <label for="">Title of item</label><br>
             <input type="text" name="title" class="form-control" placeholder="Item title" aria-label="">
 
+          </div>
+
+          <div class="col-lg-6 pb-3">
+
+            <label for="">Intro of item</label><br>
+            <input type="text" name="intro" class="form-control" placeholder="Item intro" aria-label="">
+
+          </div>
 
 
-          <label for="">Intro of item</label><br>
-          <input type="text" name="intro" class="form-control" placeholder="Item intro" aria-label="">
-
-        </div>
 
 <!-- Category col -->
-          <div class="col">
+          <div class="col-lg-6 pb-3">
 
             <label for="">Type of category</label><br>
             <select class="form-select" name="category">
@@ -43,11 +47,11 @@
 
           </div>
 
-        </div>
 
-        <div class="row pb-3">
+
+
 <!-- Description col -->
-          <div class="col">
+          <div class="col-lg-6 pb-3">
 
               <label for="">Description</label><br>
               <!-- <input type="text" class="form-control" name="" value="" placeholder="Write desription ..."> -->
@@ -56,22 +60,21 @@
           </div>
 
 <!-- Upload col -->
-          <div class="col">
+          <div class="col-lg-6 pb-3">
 
-              <div class="input-group pt-4">
+              <div class="input-group px-0">
                 <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
               </div>
 
           </div>
 
-        </div>
+
 
 <!-- Button row -->
-          <div class="row">
+          <div class="col-lg-6">
 
-            <div class="col">
-                <input type="submit" class="btn btn-primary" name="button" value="Post item">
-            </div>
+                <input type="submit" class="btn btn-primary col-3" name="button" value="Post item">
+
 
           </div>
 

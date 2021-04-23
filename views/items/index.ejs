@@ -73,8 +73,8 @@
                                         <p class="card-text mb-0">
                                           <small class="text-muted" id="item-category">
                                           <!-- Javascript content -->
-                                            <h5 class="mb-0">
-                                            {{ item.category }}
+                                            <h5 class="mb-0" v-for="categ in item.category">
+                                            {{ categ.title }}
                                             </h5>
                                           </small>
                                         </p>

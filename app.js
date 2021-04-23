@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const HomeRoutes = require('./routes/HomeRoute');
 const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
 const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
+const ItemsRoutes = require('./routes/ItemsRoutes')
 
 
 
@@ -34,7 +35,6 @@ app.use(morgan('dev'));
 
 //Variables
 
-const listOfCategories = ["Voitures", "VEHICULES", "AUTO NEUF", "INFORMATIQUE ET MULTIMEDIA", "IMMOBILIER", "IMMO NEUF", "LA MAISON ET JARDIN", "EMPLOI ET SERVICES", "HABILLEMENT ET BIEN ETRE", "LOISIRS ET DIVERTISSEMENT", "ENTREPRISES", "AUTRES"];
 
 
 app.get('/',(req,res)=>{
@@ -47,10 +47,6 @@ app.get('/list',(req,res)=>{
     res.render('items/index',{title:'List'});
 });
 
-app.get('/newitem',(req,res)=>{
-//res.send('<h1>Hello world</h1>')
-    res.render('items/create',{title:'New item', listOfCategories:listOfCategories});
-});
 
 app.get('/details',(req,res)=>{
 //res.send('<h1>Hello world</h1>')
@@ -64,6 +60,7 @@ app.get('/details',(req,res)=>{
 
 app.use('/api/category', ApiCategoryRoutes);
 app.use('/api/items', ApiItemsRoutes);
+app.use('/items', ItemsRoutes);
 
 app.use((req,res) => {
     res.status(404).render('404',{title:'404'})

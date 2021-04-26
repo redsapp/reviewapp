@@ -6,13 +6,15 @@
   <body class="pt-5">
       <%- include('../layouts/header.ejs') %>
       <!-- Page Intro Title -->
+      <%if (itemdetails) { %>
 
       <div class="container">
-
+        <h1><%= itemdetails.title %></h1>
+          <p><%= itemdetails.intro %></p>
           <!-- To do ... -->
       </div>
 
-
+<% } %>
 
 
 

@@ -44,7 +44,7 @@
                   <div class="col-lg-8 col-md-12 px-4">
                                 <div class="row pt-2">
                                         <div class="col">
-                                          <a href="#price"><h2>Price</h2></a>
+                                          <a v-bind:href="'/items/' + item._id"><h2>Price</h2></a>
                                         </div>
                                         <div class="col">
                                           <button type="button" class="btn float-end " name="button"><i class="far fa-heart fa-2x"></i></button>
@@ -53,9 +53,9 @@
       <!-- Item name -->
                                 <div class="row border-bottom" id="item-title">
                                 <!-- Javascript content -->
-                                <h5>
+                              <a v-bind:href="'/items/' + item._id">  <h5>
                                   {{ item.title }}
-                                </h5>
+                                </h5></a>
                                 </div>
 
 

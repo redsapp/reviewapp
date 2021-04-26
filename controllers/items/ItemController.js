@@ -15,7 +15,21 @@ const items_new = (req,res) => {
 
 }
 
+const items_details = (req,res) => {
+
+  const id = req.params.id;
+  Items.findById(id)
+  .then((itemdetails)=>{
+      res.render('items/details',{title:'New item',itemdetails});
+  })
+  .catch((err)=>{
+      console.log(err)
+  })
+
+}
+
 module.exports = {
-    items_new
+    items_new,
+    items_details
 
 }

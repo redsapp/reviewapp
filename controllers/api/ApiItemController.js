@@ -32,7 +32,7 @@ const items_details = (req,res) =>{
     const id = req.params.id;
     Items.findById(id)
     .then((item)=>{
-        res.json(item)
+        
     })
     .catch(err=>{
         console.log(err)

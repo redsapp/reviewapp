@@ -10,6 +10,7 @@ const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 const ItemsRoutes = require('./routes/ItemsRoutes')
 const Category = require('./models/ItemCategory')
 
+const testRoutes = require('./routes/testRoutes')
 
 
 
@@ -69,6 +70,12 @@ app.get('/details',(req,res)=>{
 app.use('/api/category', ApiCategoryRoutes);
 app.use('/api/items', ApiItemsRoutes);
 app.use('/items', ItemsRoutes);
+
+
+app.use('/test', testRoutes);
+
+
+
 
 app.use((req,res) => {
     res.status(404).render('404',{title:'404'})

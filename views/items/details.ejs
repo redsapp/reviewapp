@@ -16,12 +16,12 @@
         <div class="row me-0">
 
 
-          <div class="col-lg-8 col-md-12">
+          <div class="col-lg-8 col-md-12 pb-3">
 
             <div class="bg-light g-0 shadow-sm rounded-3">
 
 <!-- Interaction div -->
-              <div class="d-flex bd-highlight p-2">
+              <div class="d-flex bd-highlight px-1">
                 <div class="me-auto p-3 bd-highlight">
                   <a href="#previous">
                     <i class="fas fa-chevron-circle-left fa-2x"></i>
@@ -47,8 +47,8 @@
               </div>
 
 
-<!-- Item Title and Into-->
-                <div class="row ps-3">
+<!-- Item Title and Intro-->
+                <div class="row px-3">
 
                   <h1><%= itemdetails.title %></h1>
                   <p><%= itemdetails.intro %></p>
@@ -58,13 +58,13 @@
 <!-- Carousel Div -->
                 <div id="carouselExampleControlsNoTouching" class="carousel slide mb-4" data-bs-touch="false" data-bs-interval="false">
 
-<!-- The slideshow -->
+  <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="../img/4.jpg" width="" class="d-block w-100" alt="">
                           </div>
                           <div class="carousel-item">
-                            <img src="../img/4.jpg" class="d-block w-100" alt="">
+                            <img src="../img/4.jp" class="d-block w-100" alt="">
                           </div>
                           <div class="carousel-item">
                             <img src="../img/4.jpg" class="d-block w-100" alt="">
@@ -88,19 +88,18 @@
                 </div>
 
 
-
+<!-- Time and location of the post -->
                 <div class="row p-3">
-<!-- Time of post -->
-                  <div class="col-sm-4">
+  <!-- Time -->
+                  <div class="col-lg-3 col-md-3">
                     <i class="fas fa-clock me-1 text-muted"></i>
                   <!-- Javascript content -->
                   <small class="text-muted">
                     <%= itemdetails.createdAt %>
                   </small>
                   </div>
-
-<!-- Location of post -->
-                  <div class="col-sm-4">
+  <!-- Location -->
+                  <div class="col-lg-3 col-md-3">
                     <i class="fas fa-map-marker-alt me-1 text-muted"></i>
                     <small class="text-muted ">Location</small>
                   </div>
@@ -122,17 +121,33 @@
 
 
 <!-- Call to Action -->
-              <div class="col-lg-4 col-md-12 bg-light h-75 p-3 rounded-3">
+              <div class="col-lg-4 col-md-12 pb-3">
 
-                  <div class="d-flex justify-content-center py-2">
-                    <button type="button" class="btn btn-primary w-75 p-2" name="button">
-                      <i class="fas fa-info-circle pe-2"></i>About the poster</button>
+                <div class="bg-light g-0 shadow-sm rounded-3">
+
+                  <div class="d-grid gap-2 col-10 mx-auto p-3">
+
+  <!-- Info button -->
+                    <button type="button" class="btn btn-primary" name="info">
+                      <i class="fas fa-info-circle fa-2x pe-2" style="vertical-align: middle;"></i>
+                          ABOUT POSTER
+                    </button>
+
+  <!-- Call button -->
+                    <button type="button" class="btn btn-outline-success" name="call">
+                      <i class="fas fa-phone-square-alt fa-2x pe-2" style="vertical-align: middle;"></i>
+                          MAKE A CALL
+                    </button>
+
+  <!-- Chat button -->
+                    <button type="button" class="btn btn-outline-primary" name="chat">
+                      <i class="far fa-comments fa-2x pe-2" style="vertical-align: middle;"></i>
+                          CHAT
+                    </button>
                   </div>
 
-                  <div class="d-flex justify-content-center py-2">
-                    <button type="button" class="btn btn-outline-primary w-75 p-2" name="button">
-                      Chat</button>
-                  </div>
+                </div>
+
               </div>
 
 

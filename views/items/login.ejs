@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../layouts/head.ejs') %>
+    <link rel="stylesheet" href="../css/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body class="pt-5">
+    <%- include('../layouts/header.ejs') %>
+
+
+      <div class="container">
+        <!-- Login row -->
+        <div class="row " id="loginForm">
+          <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0 bg-white p-4 mb-3">
+                  <div class="row p-4 align-middle text-center">
+                    <h1>Login</h1>
+                  </div>
+                  <form action="" method="post">
+                      <div class="mb-3">
+                        <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@sample.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                          <label class="form-check-label" for="dropdownCheck">
+                            Remember me
+                          </label>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-center" id="signIn" href="#">New around here? Sign up</a>
+                    <a class="dropdown-item text-center" href="#">Forgot password?</a>
+                </div>
+            </div>
+
+
+          <!-- Sign up row -->
+          <div class="row d-none" id="signUpForm">
+            <div class="col-lg-6 offset-lg-3 col-sm-12 offset-sm-0 bg-white p-4 mb-3">
+                <div class="row p-4 align-middle text-center">
+                  <h1>Sign up</h1>
+                </div>
+
+                <form action="" method="post">
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormUsername" class="form-label">Username *</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormUsername" placeholder="username">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormTelephone" class="form-label">Telephone number *</label>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">+212</span>
+                          </div>
+                          <input type="text" class="form-control" id="exampleDropdownFormTelephone"placeholder="06********" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
+
+                  <div class="form-group mb-3">
+                    <label for="" class="form-label">City *</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option value="10013"> Agadir</option>
+                      <option value="10017"> Al Hoceima</option>
+                      <option value="10014"> Béni Mellal</option>
+                      <option value="10007"> El Jadida</option>
+                      <option value="10018"> Errachidia</option>
+                    </select>
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormEmail1" class="form-label">Email address *</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@sample.com">
+                  </div>
+
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormEmail1" class="form-label">Verify email *</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="verify your email address">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormPassword1" class="form-label">Password *</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="choose a password">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormPassword1" class="form-label">Confirm password *</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="confirm your password">
+                  </div>
+
+
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      <div class="col">
+                        <p>By clicking "Submit," I agree to the Exchange
+                        <a href="#"><u>Terms and Conditions</u></a>
+                         and <a href="#"><u>Privacy Policy</u></a>.</p>
+                      </div>
+
+                    </label>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <p>* required ﬁeld</p>
+                    </div>
+                  </div>
+
+                  <div class="btn-group rounded-bottom" style="width:100%;height:50px;">
+                    <a class="btn btn-primary">Submit</a>
+                  </div>
+
+                </form>
+        </div>
+      </div>
+
+
+      </div>
+
+
+
+
+
+  </body>
+
+  <script type="text/javascript">
+
+      const signUpAnchor = document.getElementById("signIn");
+      const loginForm = document.getElementById("loginForm");
+      const signUp = document.getElementById("signUpForm");
+
+      signUpAnchor.addEventListener('click', function(event){
+
+        loginForm.classList.add("d-none");
+        signUp.classList.remove("d-none");
+
+      });
+
+  </script>
+
+    <%- include('../layouts/footer.ejs') %>
+</html>

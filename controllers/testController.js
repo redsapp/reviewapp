@@ -1,3 +1,6 @@
-const walid = (req,res) =>{res.send ("Hello people!")}
+const walid = (req,res) =>{ res.json('HomePage')}
 
-module.exports = walid;
+module.exports =
+{
+  walid,
+}

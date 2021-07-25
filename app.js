@@ -9,8 +9,7 @@ const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
 const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 const ItemsRoutes = require('./routes/ItemsRoutes')
 const Category = require('./models/ItemCategory')
-
-const testRoutes = require('./routes/testRoutes')
+const TestRoutes = require('./routes/TestRoutes')
 
 
 
@@ -20,7 +19,8 @@ const { render } = require('ejs');
 const app = express();
 
 // db url
-const dbURI = 'mongodb+srv://redones:xJitlcfBuYUn7Edq@cluster0.mxpnl.mongodb.net/Exchange?retryWrites=true&w=majority'
+require('dotenv').config()
+const dbURI = process.env.DATABASE_URL
 mongoose.connect(dbURI,{useNewUrlParser: true, useUnifiedTopology:true})
 .then((result)=> app.listen(3000))
 .catch((err) => console.log(err));
@@ -57,22 +57,13 @@ app.get('/list',(req,res)=>{
 });
 
 
-app.get('/details',(req,res)=>{
-//res.send('<h1>Hello world</h1>')
-
-    res.render('items/details',{title:'details'});
-
-
-
-
-});
 
 app.use('/api/category', ApiCategoryRoutes);
 app.use('/api/items', ApiItemsRoutes);
 app.use('/items', ItemsRoutes);
 
+app.use('/test',TestRoutes);
 
-app.use('/test', testRoutes);
 
 
 

@@ -9,7 +9,8 @@ const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
 const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 const ItemsRoutes = require('./routes/ItemsRoutes')
 const Category = require('./models/ItemCategory')
-const TestRoutes = require('./routes/TestRoutes')
+
+const TestRoutes = require('./routes/testRoutes')
 
 
 
@@ -57,13 +58,24 @@ app.get('/list',(req,res)=>{
 });
 
 
+app.get('/details',(req,res)=>{
+//res.send('<h1>Hello world</h1>')
+
+    res.render('items/details',{title:'details'});
+});
+
+
+app.get('/login', (req,res) =>{
+  // res.send('<h1>Hello world</h1>')
+    res.render('items/login', {title: 'login'});
+});
+
 
 app.use('/api/category', ApiCategoryRoutes);
 app.use('/api/items', ApiItemsRoutes);
 app.use('/items', ItemsRoutes);
 
 app.use('/test',TestRoutes);
-
 
 
 

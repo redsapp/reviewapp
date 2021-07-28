@@ -8,21 +8,23 @@ const HomeRoutes = require('./routes/HomeRoute');
 const ApiCategoryRoutes = require('./routes/ApiCategoryRoutes')
 const ApiItemsRoutes = require('./routes/ApiItemsRoutes')
 const ItemsRoutes = require('./routes/ItemsRoutes')
+const ApiUserRoutes = require('./routes/ApiUserRoutes')
 const Category = require('./models/ItemCategory')
-
 const TestRoutes = require('./routes/testRoutes')
-
-
+ 
+ 
+ 
 // er
 const { add } = require('lodash');
 const { render } = require('ejs');
 //Express app
 const app = express();
 
+
 // db url
 require('dotenv').config()
 const dbURI = process.env.DATABASE_URL
-mongoose.connect(dbURI,{useNewUrlParser: true, useUnifiedTopology:true})
+mongoose.connect(dbURI,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true})
 .then((result)=> app.listen(3000))
 .catch((err) => console.log(err));
 // Register view engine
@@ -34,6 +36,7 @@ app.use(express.static('public'));
 // Midleware post request
 app.use(express.urlencoded({extended:true}))
 // first route
+app.use(express.json());
 app.use(morgan('dev'));
 
 //Variables
@@ -73,6 +76,7 @@ app.get('/login', (req,res) =>{
 
 app.use('/api/category', ApiCategoryRoutes);
 app.use('/api/items', ApiItemsRoutes);
+app.use('/api/user', ApiUserRoutes);
 app.use('/items', ItemsRoutes);
 
 app.use('/test',TestRoutes);

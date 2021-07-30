@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
-
+const session = require('express-session');
 
 // routes
 const HomeRoutes = require('./routes/HomeRoute');
@@ -41,6 +41,12 @@ app.use(morgan('dev'));
 
 //Variables
 
+app.use(session({
+    secret: 'y6"#asdx2qSxc',
+    resave: false,
+    saveUninitialized: true,
+  }))
+
 // check this out
 app.get('/newitem', (req,res)=>{
 
@@ -70,7 +76,7 @@ app.get('/details',(req,res)=>{
 
 app.get('/login', (req,res) =>{
   // res.send('<h1>Hello world</h1>')
-    res.render('items/login', {title: 'login'});
+    res.render('items/login', {title: 'login',user:req.session.loggedin});
 });
 
 

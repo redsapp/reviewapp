@@ -4,60 +4,88 @@
     <%- include('./layouts/head.ejs') %>
     <link rel="stylesheet" href="/css/home.css">
   </head>
-  <body class="pt-5">
-      <%- include('./layouts/header.ejs') %>
-      <!-- Page Intro Title -->
+  <body>
 
-      <div class="container">
+    <!-- Navbar -->
+      <%- include('./layouts/navbar.ejs') %>
+    <!-- Header-->
+      <main class="main-content pt-8">
+        <header class="header" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
 
-    <section class="searcharea bg-white">
+          <div class="container text-start">
+
             <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Search text" aria-label="First name">
+              <div class="col-8 mx-auto">
+
+                <h1 style="color:#3C5186">Behind every review is an experience that matters</h1>
+
+                <section class="searcharea bg-white">
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Search text" aria-label="First name">
+                          </div>
+                                          <div class="col">
+                                            <select name="ville" class="form-control ">
+                                                      <option value="3" selected="">Tout le Maroc</option>
+                                                      <option style="background-color:#dcdcc3;" value="0" disabled="disabled">-- AUTRES VILLES --</option>
+                                                      <option id="searcharea_expanded_fisrt_option" value="10005"> Casablanca</option>
+                                                      <option value="10013"> Agadir</option>
+                                                      <option value="10017"> Al Hoceima</option>
+                                                      <option value="10014"> Béni Mellal</option>
+                                                      <option value="10007"> El Jadida</option>
+                                                      <option value="10018"> Errachidia</option>
+                                            </select>
+
+                                          </div>
+
+                                          <!-- <div class="col">
+                                            <select name="categories" class="form-control">
+                                                      <option value="0">Toutes les catégories</option>
+                                                      <option style="background-color:#dcdcc3; font-weight: bold;" value="5000">-- INFORMATIQUE ET MULTIMEDIA --</option>
+                                                      <option value="5010">Téléphones</option>
+                                                      <option value="5080">Tablettes</option>
+                                                      <option value="5030">Ordinateurs portables</option>
+                                                      <option value="5050">Ordinateurs de bureau</option>
+                                            </select>
+                                          </div> -->
+
+                                          <div class="col-3">
+                                            <button type="button" class="btn btn-outline-info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
+                                                  <span class="visually-hidden">Search</span>
+                                            </button>
+                                          </div>
+
+                          </div>
+                  </section>
+
+
               </div>
-                              <div class="col">
-                                <select name="ville" class="form-control ">
-                                          <option value="3" selected="">Tout le Maroc</option>
-                                          <option style="background-color:#dcdcc3;" value="0" disabled="disabled">-- AUTRES VILLES --</option>
-                                          <option id="searcharea_expanded_fisrt_option" value="10005"> Casablanca</option>
-                                          <option value="10013"> Agadir</option>
-                                          <option value="10017"> Al Hoceima</option>
-                                          <option value="10014"> Béni Mellal</option>
-                                          <option value="10007"> El Jadida</option>
-                                          <option value="10018"> Errachidia</option>
-                                </select>
+            </div>
 
-                              </div>
+          </div>
 
-                              <div class="col">
-                                <select name="categories" class="form-control">
-                                          <option value="0">Toutes les catégories</option>
-                                          <option style="background-color:#dcdcc3; font-weight: bold;" value="5000">-- INFORMATIQUE ET MULTIMEDIA --</option>
-                                          <option value="5010">Téléphones</option>
-                                          <option value="5080">Tablettes</option>
-                                          <option value="5030">Ordinateurs portables</option>
-                                          <option value="5050">Ordinateurs de bureau</option>
-                                </select>
-                              </div>
+        </header>
 
-                              <div class="col-1">
-                                <button type="button" class="btn btn-outline-success">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
-                                      <span class="visually-hidden">Search</span>
-                                </button>
-                              </div>
+<header class="header p-8">
+
+          <div class="container">
+
+              <h3 class="p-4 text-center">Explore Categories</h3>
+              <hr>
+              <div class="row categorylist justify-content-center" id="categorylist">
+
+
 
               </div>
-      </section>
-
-      <section class="p-3">
-        <h3 class="p-2">Choisissez une catégorie</h3>
-        <div class="row categorylist justify-content-center" id="categorylist">
 
 
-        </div>
-      </section>
-</div>
+
+          </div>
+  </header>
+
+
+  </main>
   </body>
   <script type="text/javascript">
 

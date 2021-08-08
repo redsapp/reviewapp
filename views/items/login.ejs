@@ -11,8 +11,11 @@
   </head>
   <body>
     <%- include('../layouts/navbar.ejs') %>
-    <main class="main-content pt-10">
-      <section>
+
+    <main class="main-content pt-8">
+      <header class="header p-5" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+
+      <!-- <section> -->
       <div class="container">
         <!-- Login row -->
 
@@ -20,10 +23,10 @@
         <div class="row " id="loginForm">
           <div class="col-sm-12 offset-sm-0 p-4 mb-3">
                   <div class="row p-4 align-middle text-center">
-                   
+
                   </div>
                   <form action="" method="post" class="col-11 col-md-6 col-xl-5 mx-auto section-dialog bg-gray p-5 p-md-7">
-                    <h1 class="text-center">Login</h1>  
+                    <h1 class="text-center">Login</h1>
                     <div class="form-group input-group input-group-lg">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
@@ -44,10 +47,12 @@
                           </label>
                         </div>
                       </div>
-                      <a onclick="login()" href="#" class="btn btn-block btn-lg btn-success">Sing in</a>                    </form>
+                      <a onclick="login()" href="#" class="btn btn-block btn-lg btn-primary">Sign in</a>
+                    </form>
+
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-center" id="signIn" href="#">New around here? Sign up</a>
-                    <a class="dropdown-item text-center" href="#">Forgot password?</a>
+                    <a class="dropdown-item text-center" style="color: black" id="signIn" href="#">New around here? Sign up</a>
+                    <a class="dropdown-item text-center" style="color: black" href="#">Forgot password?</a>
                 </div>
             </div>
 
@@ -113,9 +118,11 @@
         <% } %>
 
       </div>
-    </section>
 
+      </header>
+    <!-- </section> -->
 
+  </header>
     </main>
 
   </body>

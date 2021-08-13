@@ -9,4 +9,4 @@ to get a copy of the repo on your local
 to install nodejs dependencies
 3. run : cd exchange
 4. run : node app.js or nodemon app.js
-to run the application and open http://127.0.0.1:3000/ on your browser
+to run the application and open http://127.0.0.1:3000/ on your browser io

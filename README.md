@@ -2,7 +2,7 @@
 First application
 
 # How to install
-
+=
 1. run the command : git clone https://github.com/redsapp/exchange.git
 to get a copy of the repo on your local
 2. run the command : npm install

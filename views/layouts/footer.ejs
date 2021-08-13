@@ -148,7 +148,7 @@
               <p>* required ﬁeld</p>
             </div>
           </div>
-         
+
 
         </form>
 
@@ -166,11 +166,16 @@
 
 $(window).scroll(function() {
 
-if ($(this).scrollTop() > 100){  
+if ($(this).scrollTop()){
     $('body').addClass("navbarfixed");
+    $("a.nav-link").css("color" , "#F9F9F9");
+    $("span").css("color" , "#F9F9F9");
+
 }
 else{
     $('body').removeClass("navbarfixed");
+      $("a.nav-link").css("color" , "");
+      $("span").css("color" , "#3C5186");
 }
 });
 </script>

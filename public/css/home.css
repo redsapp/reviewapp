@@ -29,8 +29,25 @@ body{
   background: white;
   min-height: 200px;
 }
+
 .navbarfixed nav{
   background: #3C415C;
   padding: 6px;
   top: 0;
+}
+
+.logsd {
+  background-color: #F9F9F9;
+  border:1px solid #3C415C;
+
+}
+
+.logsd:hover {
+  background-color: #E1E8EB;
+  border:1px solid #3C415C;
+  box-shadow: 0 0 5px #F4F9F9;
+}
+
+span.logincolor {
+  color: #3C415C;
 }

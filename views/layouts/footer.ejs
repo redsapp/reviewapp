@@ -168,14 +168,42 @@ $(window).scroll(function() {
 
 if ($(this).scrollTop()){
     $('body').addClass("navbarfixed");
-    $("a.nav-link").css("color" , "#F9F9F9");
     $("span").css("color" , "#F9F9F9");
+    $("section.navbar-divider").css("color" , "#F9F9F9")
+    $("a.nav-link").css("color" , "#F9F9F9");
+    $("a.nav-link").hover(function(){
+      $(this).css("color", "#A7BBC7");
+    }, function(){
+      $(this).css("color", "#F9F9F9");
+    });
+
+
+    $(".logsd").css({"background": "#F9F9F9", "border-color" : "#F9F9F9"});
+    $("span.logincolor").css("color", "#3C415C")
+    $(".logsd").hover(function(){
+      $(this).css({"background": "#E1E8EB","border": "1px solid #E1E8EB", "shadow-box": "0 0 2px #F4F9F9"});
+    }, function(){
+      $(this).css({"background": "#F9F9F9", "border": "1px solid #F9F9F9"});
+    });
+
+
 
 }
 else{
     $('body').removeClass("navbarfixed");
-      $("a.nav-link").css("color" , "");
-      $("span").css("color" , "#3C5186");
+    $("a.nav-link").css("color" , "");
+    $("span").css("color" , "#3C5186");
+    $(".logsd").css({"background": "#F9F9F9", "border": "1px solid #3C415C"});
+    $(".logsd").hover(function(){
+      $(this).css({"background": "#E1E8EB","border": "1px solid #3C415C", "shadow-box": "0 0 2px #F4F9F9"});
+    }, function(){
+      $(this).css({"background": "#F9F9F9", "border": "1px solid #3C415C"});
+    });
+
+    $("a.nav-link").unbind('mouseenter mouseleave');
+
+
 }
+
 });
 </script>
